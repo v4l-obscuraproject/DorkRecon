@@ -1,12 +1,17 @@
-DorkRecon
+# DorkRecon
 
-DorkRecon is a domain reconnaissance tool that generates Google dork queries — advanced search operators (site:, filetype:, inurl:, intitle:) that find content Google has indexed but that probably shouldn't be publicly exposed. It's written in Python 3 and MIT-licensed.
+**Note:** the ASCII art banner may appear wrapped or misaligned if your
+terminal window is narrower than ~55 characters. This is purely cosmetic
+and doesn't affect the tool's functionality — widen your terminal window
+if you want the banner to display correctly.
 
-Scroll down for installation commands and usage.
+## DorkRecon is a domain reconnaissance tool that generates Google dork queries — advanced search operators (site:, filetype:, inurl:, intitle:) that find content Google has indexed but that probably ## shouldn't be publicly exposed. It's written in Python 3 and MIT-licensed.
 
-Installation and Running
+# Scroll down for installation commands and usage.
 
-DorkRecon requires Python 3.8+ and has no external dependencies — it only uses Python's standard library.
+### Installation and Running
+
+## DorkRecon requires Python 3.8+ and has no external dependencies — it only uses Python's standard library.
 
 # macOS / Linux
 
