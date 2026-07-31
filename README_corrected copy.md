@@ -1,3 +1,4 @@
+
 # DorkRecon
 
 **DorkRecon** is a domain reconnaissance tool that generates Google dork
@@ -13,6 +14,18 @@ shouldn't be publicly exposed. It's written in **Python 3** and
 - Generates 10 categories of recon dork queries per domain
 - Optional `--open` flag to launch each query directly in your browser
 - Adjustable delay between browser tabs
+
+## Installation and Running
+
+DorkRecon requires Python 3.8+ and has no external dependencies — it only
+uses Python's standard library.
+
+
+```bash
+git clone <repo-url>
+cd DorkRecon
+python3 dork_gen.py example.com
+```
 
 ## Uses
 
@@ -41,16 +54,6 @@ parts of Recon-ng or theHarvester.
 lookup functionality). Only meant to run against domains you own or have
 written authorization to test.
 
-## Installation and Running
-
-DorkRecon requires Python 3.8+ and has no external dependencies — it only
-uses Python's standard library.
-
-```bash
-git clone <repo-url>
-cd DorkRecon
-python3 dork_gen.py example.com
-```
 
 ## License
 
@@ -59,4 +62,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## Credits
 
 Made by **5h9q_** (developer) and **rosp_1** (publishing).
-See [CREDITS.md](CREDITS.md).
+on Discord
