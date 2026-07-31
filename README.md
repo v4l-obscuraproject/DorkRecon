@@ -13,7 +13,7 @@ if you want the banner to display correctly.
 
 ## DorkRecon requires Python 3.8+ and has no external dependencies — it only uses Python's standard library.
 
-# macOS / Linux
+# macOS / Linux (can run on vscodium, and vscode built in terminal)
 
 ## Open Terminal, then run:
 
@@ -24,7 +24,7 @@ cd DorkRecon
 
 python3 dork_gen.py example.com
 
-# Windows
+# Windows (can run on vscodium, and vscode built in terminal)
 ## Open Command Prompt or PowerShell, then run:
 
 git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you didnt download the zip file through github.)
