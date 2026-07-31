@@ -24,29 +24,29 @@ git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you 
 cd DorkRecon
 python dork_gen.py example.com
 
-# (On Windows, the command is usually just python instead of python3 — if python doesn't work, try python3 or py instead, depending on how Python was installed.)
+## (On Windows, the command is usually just python instead of python3 — if python doesn't work, try python3 or py instead, depending on how Python was installed.)
 
-# macOS security warning
+## macOS security warning
 
-# macOS may show an "unsafe" / "can't be opened because it is from an unidentified developer" warning when running downloaded scripts for the first time. This is standard Gatekeeper behavior for any # file downloaded from the internet, not a sign of an actual problem with this specific file — it's a short, fully readable Python script with no obfuscation and no external calls beyond opening your # browser. If you've reviewed the code and trust it, allow it via:
+## macOS may show an "unsafe" / "can't be opened because it is from an unidentified developer" warning when running downloaded scripts for the first time. This is standard Gatekeeper behavior for any # file downloaded from the internet, not a sign of an actual problem with this specific file — it's a short, fully readable Python script with no obfuscation and no external calls beyond opening your # browser. If you've reviewed the code and trust it, allow it via:
 
-# System Settings → Privacy & Security → scroll down → "Open Anyway"
+## System Settings → Privacy & Security → scroll down → "Open Anyway"
 
-# Windows security warning
+## Windows security warning
 
-# Windows Defender SmartScreen may show a "Windows protected your PC" / "unrecognized app" warning when running make.bat or downloaded scripts for the first time. This is standard SmartScreen behavior # for files downloaded from the internet without an established reputation, not a sign of an actual problem with this specific file. If you've reviewed the code and trust it, proceed via:
+## Windows Defender SmartScreen may show a "Windows protected your PC" / "unrecognized app" warning when running make.bat or downloaded scripts for the first time. This is standard SmartScreen behavior ## for files downloaded from the internet without an established reputation, not a sign of an actual problem with this specific file. If you've reviewed the code and trust it, proceed via:
 
-# Click "More info" → "Run anyway"
+## Click "More info" → "Run anyway"
 
 General usage
 bash
-# Print dork queries for a domain
+Print dork queries for a domain
 python3 dork_gen.py example.com
 
-# Also open each query automatically in your browser
+Also open each query automatically in your browser
 python3 dork_gen.py example.com --open
 
-# Control delay (seconds) between opening browser tabs (default: 2.0)
+Control delay (seconds) between opening browser tabs (default: 2.0)
 python3 dork_gen.py example.com --open --delay 3
 Features
 Simple command-line interface, no setup required
