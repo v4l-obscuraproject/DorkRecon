@@ -44,7 +44,7 @@ BANNER = r"""
 | |) / _ \ '_| / /   / -_) _/ _ \ ' \
 |___/\___/_| |_\_\_|_\___\__\___/_||_|
 
-    5h9q_  (developer)         rosp_1  (publishing)
+    5h9q_  (developer)        rosp_1  (publishing) |--| these our are socials on discord if you want to contact for support.
 """
 
 DORK_TEMPLATES = [
