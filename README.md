@@ -8,34 +8,35 @@ Installation and Running
 
 DorkRecon requires Python 3.8+ and has no external dependencies — it only uses Python's standard library.
 
-macOS / Linux
+# macOS / Linux
 
-Open Terminal, then run:
+# Open Terminal, then run:
 
 bash
 git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you didnt download the zip file through github.)
 cd DorkRecon
 python3 dork_gen.py example.com
-Windows
-Open Command Prompt or PowerShell, then run:
+
+# Windows
+# Open Command Prompt or PowerShell, then run:
 
 git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you didnt download the zip file through github.)
 cd DorkRecon
 python dork_gen.py example.com
 
-(On Windows, the command is usually just python instead of python3 — if python doesn't work, try python3 or py instead, depending on how Python was installed.)
+# (On Windows, the command is usually just python instead of python3 — if python doesn't work, try python3 or py instead, depending on how Python was installed.)
 
-macOS security warning
+# macOS security warning
 
-macOS may show an "unsafe" / "can't be opened because it is from an unidentified developer" warning when running downloaded scripts for the first time. This is standard Gatekeeper behavior for any file downloaded from the internet, not a sign of an actual problem with this specific file — it's a short, fully readable Python script with no obfuscation and no external calls beyond opening your browser. If you've reviewed the code and trust it, allow it via:
+# macOS may show an "unsafe" / "can't be opened because it is from an unidentified developer" warning when running downloaded scripts for the first time. This is standard Gatekeeper behavior for any # file downloaded from the internet, not a sign of an actual problem with this specific file — it's a short, fully readable Python script with no obfuscation and no external calls beyond opening your # browser. If you've reviewed the code and trust it, allow it via:
 
-System Settings → Privacy & Security → scroll down → "Open Anyway"
+# System Settings → Privacy & Security → scroll down → "Open Anyway"
 
-Windows security warning
+# Windows security warning
 
-Windows Defender SmartScreen may show a "Windows protected your PC" / "unrecognized app" warning when running make.bat or downloaded scripts for the first time. This is standard SmartScreen behavior for files downloaded from the internet without an established reputation, not a sign of an actual problem with this specific file. If you've reviewed the code and trust it, proceed via:
+# Windows Defender SmartScreen may show a "Windows protected your PC" / "unrecognized app" warning when running make.bat or downloaded scripts for the first time. This is standard SmartScreen behavior # for files downloaded from the internet without an established reputation, not a sign of an actual problem with this specific file. If you've reviewed the code and trust it, proceed via:
 
-Click "More info" → "Run anyway"
+# Click "More info" → "Run anyway"
 
 General usage
 bash
