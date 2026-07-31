@@ -19,14 +19,18 @@ if you want the banner to display correctly.
 
 bash
 git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you didnt download the zip file through github.)
+
 cd DorkRecon
+
 python3 dork_gen.py example.com
 
 # Windows
 ## Open Command Prompt or PowerShell, then run:
 
 git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you didnt download the zip file through github.)
+
 cd DorkRecon
+
 python dork_gen.py example.com
 
 ## (On Windows, the command is usually just python instead of python3 — if python doesn't work, try python3 or py instead, depending on how Python was installed.)
