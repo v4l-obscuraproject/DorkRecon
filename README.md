@@ -1,97 +1,70 @@
 # DorkRecon
 
-**Note:** the ASCII art banner may appear wrapped or misaligned if your
-terminal window is narrower than ~55 characters. This is purely cosmetic
-and doesn't affect the tool's functionality — widen your terminal window
-if you want the banner to display correctly.
+DorkRecon is a lightweight domain reconnaissance tool that automates the generation of targeted Google Dork queries. It identifies indexed, exposed assets—such as configuration files, database backups, and administrative portals—to evaluate an organization's external attack surface.
 
-## DorkRecon is a domain reconnaissance tool that generates Google dork queries — advanced search operators (site:, filetype:, inurl:, intitle:) that find content Google has indexed but that probably ## shouldn't be publicly exposed. It's written in Python 3 and MIT-licensed.
+## ⚖️ Legal & Authorized Use Disclaimer
+This tool is strictly intended for authorized penetration testing, red team engagements, and defensive auditing. Users are entirely responsible for ensuring explicit, written authorization before analyzing target domains. Unauthorized scanning or utilization of data may violate computer fraud laws (e.g., CFAA). The developers assume no liability for misuse.
 
-# Scroll down for installation commands and usage.
+## 🚀 Features
+* **Zero Dependencies:** Built entirely on the Python 3 standard library for clean, sandboxed execution.
+* **10 Reconnaissance Classifications:** Targets config files, SQL backups, log directories, API leaks, and subdomains.
+* **Automated Triage:** Optional browser integration (`--open`) with configurable transaction pacing to prevent rate limits.
 
-### Installation and Running
+## 📦 Installation & Deployment
 
-## DorkRecon requires Python 3.8+ and has no external dependencies — it only uses Python's standard library.
+### System Requirements
+* Python 3.8 or higher
+* Standard terminal environment
 
-# macOS / Linux (can run on vscodium, and vscode built in terminal)
-
-## Open Terminal, then run:
-
-bash
-git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you didnt download the zip file through github.)
-
+### Linux / macOS
+```bash
+git clone https://github.com/v4l-obscuraproject/DorkRecon
 cd DorkRecon
-
 python3 dork_gen.py example.com
+```
 
-# Windows (can run on vscodium, and vscode built in terminal)
-## Open Command Prompt or PowerShell, then run:
-
-git clone https://github.com/v4l-obscuraproject/DorkRecon (only use this if you didnt download the zip file through github.)
-
+### Windows (Command Prompt / PowerShell)
+```cmd
+git clone https://github.com/v4l-obscuraproject/DorkRecon
 cd DorkRecon
-
 python dork_gen.py example.com
+```
 
-## (On Windows, the command is usually just python instead of python3 — if python doesn't work, try python3 or py instead, depending on how Python was installed.)
+---
 
-## macOS security warning
+## 🛠️ Detailed Usage & Syntax
 
-## macOS may show an "unsafe" / "can't be opened because it is from an unidentified developer" warning when running downloaded scripts for the first time. This is standard Gatekeeper behavior for any # file downloaded from the internet, not a sign of an actual problem with this specific file — it's a short, fully readable Python script with no obfuscation and no external calls beyond opening your # browser. If you've reviewed the code and trust it, allow it via:
+### Basic Domain Query Generation
+```bash
+python3 dork_gen.py example.com
+```
 
-## System Settings → Privacy & Security → scroll down → "Open Anyway"
+### Automated Browser Triage
+To launch generated queries dynamically inside default browser tabs:
+```bash
+python3 dork_gen.py example.com --open
+```
 
-## Windows security warning
+### Congestion Control / Pacing
+To modify target delays (seconds) and mitigate search engine rate-limiting thresholds:
+```bash
+python3 dork_gen.py example.com --open --delay 3
+```
 
-## Windows Defender SmartScreen may show a "Windows protected your PC" / "unrecognized app" warning when running make.bat or downloaded scripts for the first time. This is standard SmartScreen behavior ## for files downloaded from the internet without an established reputation, not a sign of an actual problem with this specific file. If you've reviewed the code and trust it, proceed via:
+---
 
-## Click "More info" → "Run anyway"
+## 🛡️ Execution & Security Policies
+Because this script interacts directly with native web browsers to surface open-source intelligence, local operating system endpoint controls may require administrative confirmation during initial setup:
+* **macOS Gatekeeper:** If blocked as an unidentified developer script, authorize execution via `System Settings → Privacy & Security → Open Anyway`.
+* **Windows SmartScreen:** If flagged due to an unestablished file reputation, proceed via `More info → Run anyway`.
 
-## General usage
-## bash
-## Print dork queries for a domain
-## python3 dork_gen.py example.com
+## 🗺️ Future Roadmap (Engineering Backlog)
+* Implement modular backend search engine parsers (e.g., DuckDuckGo HTML, Bing API).
+* Integrate dynamic proxy rotation modules (`HTTP/SOCKS5`) for scalable execution.
+* Add automated JSON/CSV serialization for seamless pipeline integration with tools like Nmap.
 
-## Also open each query automatically in your browser
-## python3 dork_gen.py example.com --open
+## 📄 License & Credits
+* **License:** MIT License
+* **Development:** 5h9q_
+* **Publishing:** rosp_1
 
-### Control delay (seconds) between opening browser tabs (default: 2.0)
-### python3 dork_gen.py example.com --open --delay 3
-### Features
-### Simple command-line interface, no setup required
-### Written in pure Python 3 — no external dependencies
-### Generates 10 categories of recon dork queries per domain
-### Optional --open flag to launch each query directly in your browser
-### Adjustable delay between browser tabs
-# What DorkRecon is used for
-
-##  Given a target domain, DorkRecon produces 10 categories of recon queries:
-
-### Exposed config files (.env, .ini, .cfg)
-### Exposed SQL/database files
-### Indexed login/admin pages
-### Open directory listings
-### Exposed backup files (.bak, .old)
-### Exposed log files
-### Publicly indexed documents (PDFs, Word docs, spreadsheets)
-### Error messages/stack traces that leak internals
-### Exposed API keys/secrets mentioned in text
-### Subdomains Google has indexed
-
-# Intended use case: the reconnaissance phase of an authorized penetration test or red team engagement — checking what an organization's own domain has accidentally exposed to Google's index, so it can # be fixed before an actual attacker finds it. Same category of tool as recon-focused parts of Recon-ng or theHarvester.
-
-# Not intended for: looking up people (no email/username/personal lookup functionality). Only meant to run against domains you own or have written authorization to test.
-
-# Disclaimer
-
-## The technique this tool uses (searching Google with advanced operators) is not itself illegal — it's the same as typing a search into Google manually. However, running reconnaissance against a ## domain you don't own or don't have explicit written authorization to test can violate computer fraud laws depending on jurisdiction and what's done with the results.
-
-# The developers of DorkRecon are not responsible for misuse of this tool. Users are solely responsible for ensuring they have proper authorization before running this tool against any domain, and for # how they use any information it surfaces. See OBSCURA_Terms_of_Service.md for full terms.
-
-# License
-
-# MIT License — see LICENSE for details.
-
-# Credits
-
-## Made by 5h9q_ (developer) and rosp_1 (publishing).
